@@ -25,6 +25,13 @@ app.use(function(req, res, next) {
   next();
 });
 
+//setup router
+const router = require('./router');    
+
 //Start the server
 const server = app.listen(config.port);  
 console.log('Your server is running on port ' + config.port + '.');  
+
+
+// Import routes to be served
+router(app);
